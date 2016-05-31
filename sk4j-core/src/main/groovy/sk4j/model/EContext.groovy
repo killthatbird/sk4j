@@ -5,9 +5,14 @@ package sk4j.model
  * @author jcruz
  *
  */
-class EProject {
+class EContext {
 	/**
 	 * 
 	 */
-	List<EClass> classes
+	EProject project
+
+	/**
+	 * 
+	 */
+	EClass clazz
 }

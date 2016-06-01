@@ -14,5 +14,5 @@ class EContext {
 	/**
 	 * 
 	 */
-	EClass clazz
+	EModel model
 }

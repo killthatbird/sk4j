@@ -10,15 +10,18 @@ import com.thoughtworks.qdox.model.JavaClass
  * @author jcruz
  *
  */
-class EClass extends JavaClass {
+class EModel  {
+
+	JavaClass javaClass
+
+	/**
+	 * 
+	 */
+	JavaClassSource javaClassSource
 	/**
 	 * 
 	 */
 	String path
-	/**
-	 * 
-	 */
-	JavaClassSource javaSource
 
 	/**
 	 * Verifica se a classe possui a annotation especificada.
@@ -26,7 +29,7 @@ class EClass extends JavaClass {
 	 * @return
 	 */
 	boolean hasAnnotation(String name) {
-		this.annotations.any { Annotation ann ->
+		javaClass.annotations.any { Annotation ann ->
 			ann.type.value.endsWith(name)
 		}
 	}

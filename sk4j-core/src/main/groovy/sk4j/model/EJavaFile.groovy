@@ -24,6 +24,16 @@ class EJavaFile implements Comparable<EJavaFile>  {
 	String path
 
 	/**
+	 * 
+	 */
+	List<EJavaAttribute> javaAttributes
+
+	/**
+	 * 
+	 */
+	List<EJavaMethod> javaMethods
+
+	/**
 	 * Verifica se a classe possui a annotation especificada.
 	 * @param name
 	 * @return

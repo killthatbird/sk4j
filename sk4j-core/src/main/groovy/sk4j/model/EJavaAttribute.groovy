@@ -8,7 +8,11 @@ import com.thoughtworks.qdox.model.JavaField
  * @author jcruz
  *
  */
-class EAttribute extends JavaField {
+class EJavaAttribute implements Comparable<EJavaAttribute>   {
+	/**
+	 * 
+	 */
+	JavaField javaField
 	/**
 	 * 
 	 * @param name
@@ -18,5 +22,12 @@ class EAttribute extends JavaField {
 		this.annotations.any { Annotation ann ->
 			ann.type.value.endsWith(name)
 		}
+	}
+	/**
+	 * 
+	 */
+	@Override
+	public int compareTo(EJavaAttribute o) {
+		return this.javaField.name.compareTo(o.javaField.name)
 	}
 }

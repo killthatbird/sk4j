@@ -6,6 +6,15 @@ package sk4j.model
  *
  */
 class EProject {
+	
+	/**
+	 * 
+	 */
+	String name
+	/**
+	 * 
+	 */
+	String path
 	/**
 	 * 
 	 */

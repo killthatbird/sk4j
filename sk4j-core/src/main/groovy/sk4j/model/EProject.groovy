@@ -36,7 +36,10 @@ class EProject {
 		super()
 	}
 
-
+	/**
+	 * 
+	 * @return
+	 */
 	public List<EJavaFile> getJavaFiles() {
 		if(javaFiles == null) {
 			this.javaFiles = []

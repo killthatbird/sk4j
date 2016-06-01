@@ -10,7 +10,7 @@ import com.thoughtworks.qdox.model.JavaClass
  * @author jcruz
  *
  */
-class EModel  {
+class EJavaFile implements Comparable<EJavaFile>  {
 
 	JavaClass javaClass
 
@@ -32,5 +32,9 @@ class EModel  {
 		javaClass.annotations.any { Annotation ann ->
 			ann.type.value.endsWith(name)
 		}
+	}
+	@Override
+	public int compareTo(EJavaFile o) {
+		return this.javaClass.name.compareTo(o.javaClass.name)
 	}
 }

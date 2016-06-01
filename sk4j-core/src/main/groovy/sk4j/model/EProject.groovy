@@ -30,24 +30,24 @@ class EProject {
 	/**
 	 * 
 	 */
-	List<EModel> models
+	List<EJavaFile> javaFiles
 
 	public EProject() {
 		super()
 	}
 
 
-	public List<EModel> getModels() {
-		if(models == null) {
-			this.models = []
+	public List<EJavaFile> getJavaFiles() {
+		if(javaFiles == null) {
+			this.javaFiles = []
 			file.eachFileRecurse(FileType.FILES) {
 				if(it.name.endsWith('.java')) {
 					JavaDocBuilder builder = new JavaDocBuilder()
 					JavaSource source = builder.addSource(it)
-					this.models << new EModel(javaClass: source.classes[0])
+					this.javaFiles << new EJavaFile(javaClass: source.classes[0])
 				}
 			}
 		}
-		return this.models
+		return this.javaFiles
 	}
 }

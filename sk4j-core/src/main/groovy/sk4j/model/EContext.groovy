@@ -14,5 +14,5 @@ class EContext {
 	/**
 	 * 
 	 */
-	EModel model
+	EJavaFile model
 }

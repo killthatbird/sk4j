@@ -1,5 +1,6 @@
 package sk4j.model
 
+import com.thoughtworks.qdox.model.Annotation
 import com.thoughtworks.qdox.model.JavaField
 
 /**
@@ -14,5 +15,8 @@ class EAttribute extends JavaField {
 	 * @return
 	 */
 	boolean hasAnnotation(String name) {
+		this.annotations.any { Annotation ann ->
+			ann.type.value.endsWith(name)
+		}
 	}
 }

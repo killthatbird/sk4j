@@ -8,7 +8,7 @@ import com.thoughtworks.qdox.model.JavaMethod
  * @author jcruz
  *
  */
-class EJavaMethod implements Comparable<EJavaMethod>{
+class EJavaMethod extends EModel implements Comparable<EJavaMethod>{
 	/**
 	 * 
 	 */
@@ -29,5 +29,12 @@ class EJavaMethod implements Comparable<EJavaMethod>{
 	@Override
 	public int compareTo(EJavaMethod o) {
 		return this.javaMethod.name.compareTo(o.javaMethod.name)
+	}
+	/**
+	 * 
+	 */
+	@Override
+	public String getId() {
+		return javaMethod.name
 	}
 }

@@ -8,7 +8,7 @@ import com.thoughtworks.qdox.model.JavaField
  * @author jcruz
  *
  */
-class EJavaAttribute implements Comparable<EJavaAttribute>   {
+class EJavaAttribute extends EModel implements Comparable<EJavaAttribute>   {
 	/**
 	 * 
 	 */
@@ -29,5 +29,12 @@ class EJavaAttribute implements Comparable<EJavaAttribute>   {
 	@Override
 	public int compareTo(EJavaAttribute o) {
 		return this.javaField.name.compareTo(o.javaField.name)
+	}
+	/**
+	 * 
+	 */
+	@Override
+	public String getId() {
+		return javaField.name
 	}
 }

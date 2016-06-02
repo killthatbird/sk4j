@@ -10,7 +10,7 @@ import com.thoughtworks.qdox.model.JavaClass
  * @author jcruz
  *
  */
-class EJavaFile implements Comparable<EJavaFile>  {
+class EJavaFile extends EModel implements Comparable<EJavaFile>  {
 
 	JavaClass javaClass
 
@@ -46,5 +46,9 @@ class EJavaFile implements Comparable<EJavaFile>  {
 	@Override
 	public int compareTo(EJavaFile o) {
 		return this.javaClass.name.compareTo(o.javaClass.name)
+	}
+	@Override
+	public String getId() {
+		return this.javaClass.name
 	}
 }

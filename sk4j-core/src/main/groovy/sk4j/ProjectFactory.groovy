@@ -4,7 +4,7 @@ import sk4j.model.EProject
 
 
 @Singleton
-class EProjectFactory {
+class ProjectFactory {
 
 	EProject create(String path) {
 		new EProject(file: new File(path))

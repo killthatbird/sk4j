@@ -13,6 +13,6 @@ class ModelChooserTest {
 			new ModelFoo(name:"Material")
 		]
 
-		new ModelChooser<ModelFoo>(options).choose()
+		new ModelChooser<ModelFoo>(options).chooseSingle()
 	}
 }

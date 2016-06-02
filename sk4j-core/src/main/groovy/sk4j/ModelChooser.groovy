@@ -1,5 +1,6 @@
 package sk4j
 
+import java.net.InetAddress.Cache;
 import java.util.List;
 
 import sk4j.model.EModel
@@ -15,7 +16,9 @@ class ModelChooser<T extends EModel> {
 
 	def userSelectedOptionList = []
 
-	def optionCounter = 1
+	def optionCounter = 0
+
+	def optionMap = [:]
 
 	List<T> options = []
 
@@ -24,8 +27,14 @@ class ModelChooser<T extends EModel> {
 		this.options = options;
 	}
 
-	def choose() {
+	def chooseSingle() {
 		printOptionList()
+		readUserInputSingle()
+	}
+
+	def chooseMultiple() {
+		printOptionList()
+		readUserInputMultiple()
 	}
 
 	/**
@@ -44,20 +53,58 @@ class ModelChooser<T extends EModel> {
 	 * @return
 	 */
 	private trasformOptionListToMap() {
-		options.sort().collectEntries { T m ->
-			[(optionCounter++):m.id]
+		optionMap = options.sort().collectEntries { T m ->
+			[(++optionCounter):m.id]
 		}
 	}
 
+	/**
+	 * Le a entrada do usuário com suporte para seleção simples apenas.
+	 *
+	 * @return
+	 */
+	private readUserInputSingle() {
+		def userInput
+		System.in.withReader {
+			print "\nDigite o número da opção: "
+			userInput = it.readLine()
+		}
+		validateInputSingle(userInput)
+		optionMap[Integer.valueOf(userInput)]
+	}
+
+	private validateInputSingle(input) {
+		def validInput = input ==~ /\s*\d\d*/ && Integer.valueOf(input) <= optionCounter
+		if(!validInput) {
+			println "Opção inválida: ${input}"
+			System.exit(1)
+		}
+	}
 
 	/**
-	 * Le a entrada do usuário
+	 * Le a entrada do usuário com suporte para seleção multipla.
 	 * 
 	 * @return
 	 */
-	private readUserInput() {
+	private readUserInputMultiple() {
+		def userInput
 		System.in.withReader {
-			String userInput = it.readLine()
+			print "\nDigite o(s) número(s) da(s) opção(s) ([${++optionCounter}] Selecionar tudo): "
+			userInput = it.readLine()
 		}
+		validateInputMultiple(userInput)
+	}
+
+	private validateInputMultiple(input) {
+		def validInput = input ==~ /\s*\d(\d*|\s*,\s*\d+)?/
+		if(!validInput) {
+			println "Opção inválida: ${input}"
+			System.exit(1)
+		}
+		def cacheOptionList = input.split(',').collect {
+			Integer.valueOf(it)
+		}
+		
+		println cacheOptionList
 	}
 }

@@ -2,16 +2,23 @@ package sk4j
 
 import sk4j.model.EModel
 
-class ModelChooser {
+/**
+ * Classe que monta a seleção de modelos via linha de comando.
+ * 
+ * @author jcruz
+ *
+ * @param <T>
+ */
+class ModelChooser<T extends EModel> {
 
 	def userSelectedOptionList
 
 	def optionCounter = 1
 
-	List<EModel> optionList = []
+	List<T> options = []
 
 	def choose() {
-		optionList.collectEntries { EModel m ->
+		options.collectEntries { T m ->
 			[(optionCounter++):m.id]
 		}
 	}

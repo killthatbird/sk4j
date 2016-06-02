@@ -22,6 +22,8 @@ class ModelChooser<T extends EModel> {
 
 	List<T> options = []
 
+	def validInputPattern = ['single': /\s*\d\d*/, 'multiple': /\s*\d(\d*|\s*,\s*\d+)?/ ]
+
 	public ModelChooser(List<T> options) {
 		super();
 		this.options = options;
@@ -74,8 +76,8 @@ class ModelChooser<T extends EModel> {
 	}
 
 	private validateInputSingle(input) {
-		def validInput = input ==~ /\s*\d\d*/ && Integer.valueOf(input) <= optionCounter
-		if(!validInput) {
+		def valid = input ==~ validInputPattern['single'] && Integer.valueOf(input) in(1..optionCounter)
+		if(!valid) {
 			println "Opção inválida: ${input}"
 			System.exit(1)
 		}
@@ -96,15 +98,13 @@ class ModelChooser<T extends EModel> {
 	}
 
 	private validateInputMultiple(input) {
-		def validInput = input ==~ /\s*\d(\d*|\s*,\s*\d+)?/
-		if(!validInput) {
+		def valid = input ==~ validInputPattern['multiple']
+		if(!valid) {
 			println "Opção inválida: ${input}"
 			System.exit(1)
 		}
-		def cacheOptionList = input.split(',').collect {
-			Integer.valueOf(it)
-		}
-		
+		def cacheOptionList = input.split(',').collect { Integer.valueOf(it) }
+
 		println cacheOptionList
 	}
 }

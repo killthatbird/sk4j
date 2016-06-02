@@ -1,5 +1,7 @@
 package sk4j
 
+import java.util.List;
+
 import sk4j.model.EModel
 
 /**
@@ -11,19 +13,49 @@ import sk4j.model.EModel
  */
 class ModelChooser<T extends EModel> {
 
-	def userSelectedOptionList
+	def userSelectedOptionList = []
 
 	def optionCounter = 1
 
 	List<T> options = []
 
+	public ModelChooser(List<T> options) {
+		super();
+		this.options = options;
+	}
+
 	def choose() {
-		options.collectEntries { T m ->
+		printOptionList()
+	}
+
+	/**
+	 * Exibe na console as opções para seleção.
+	 * 
+	 * @return
+	 */
+	private printOptionList() {
+		trasformOptionListToMap().each { key, value ->
+			println "[$key] $value"
+		}
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	private trasformOptionListToMap() {
+		options.sort().collectEntries { T m ->
 			[(optionCounter++):m.id]
 		}
 	}
 
-	private def read() {
+
+	/**
+	 * Le a entrada do usuário
+	 * 
+	 * @return
+	 */
+	private readUserInput() {
 		System.in.withReader {
 			String userInput = it.readLine()
 		}

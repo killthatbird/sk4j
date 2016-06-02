@@ -8,7 +8,7 @@ import com.thoughtworks.qdox.model.JavaField
  * @author jcruz
  *
  */
-class EJavaAttribute extends EModel implements Comparable<EJavaAttribute>   {
+class EJavaAttribute extends EModel<EJavaAttribute>   {
 	/**
 	 * 
 	 */

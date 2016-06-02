@@ -10,7 +10,7 @@ import com.thoughtworks.qdox.model.JavaClass
  * @author jcruz
  *
  */
-class EJavaFile extends EModel implements Comparable<EJavaFile>  {
+class EJavaFile extends EModel<EJavaFile>   {
 
 	JavaClass javaClass
 

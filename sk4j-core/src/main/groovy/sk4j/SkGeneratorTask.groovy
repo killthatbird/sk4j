@@ -19,7 +19,4 @@ abstract class SkGeneratorTask extends SkTask {
 	public void doTask() {
 		generate()
 	}
-
-	def merge(){
-	}
 }

@@ -1,9 +1,9 @@
 package foo.task
 
-import sk4j.SkApp
+import sk4j.SkContext
 
-class DaoApp extends SkApp {
+class DaoApp extends SkContext {
 	static main(args) {
-		SkApp.task(DaoTask.class, [model:'jose'])
+		SkContext.task(DaoTask.class, [model:'jose'])
 	}
 }

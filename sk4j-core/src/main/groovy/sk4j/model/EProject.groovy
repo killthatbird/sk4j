@@ -38,6 +38,8 @@ class EProject {
 
 	/**
 	 * 
+	 * Iterar pelos diretórios do projeto e identifica todos os arquivos do tipo java. 
+	 * 
 	 * @return
 	 */
 	public List<EJavaFile> getJavaFiles() {

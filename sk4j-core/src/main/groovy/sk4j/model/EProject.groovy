@@ -2,6 +2,8 @@ package sk4j.model
 
 import groovy.io.FileType
 
+import org.apache.commons.io.FilenameUtils
+
 import com.thoughtworks.qdox.JavaDocBuilder
 import com.thoughtworks.qdox.model.JavaSource
 
@@ -48,7 +50,8 @@ class EProject {
 				if(it.name.endsWith('.java')) {
 					JavaDocBuilder builder = new JavaDocBuilder()
 					JavaSource source = builder.addSource(it)
-					this.javaFiles << new EJavaFile(javaClass: source.classes[0], path: it.absolutePath)
+					def path =  FilenameUtils.normalize(FilenameUtils.getFullPath(it.absolutePath))
+					this.javaFiles << new EJavaFile(javaClass: source.classes[0], path: path)
 				}
 			}
 		}

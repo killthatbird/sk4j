@@ -7,6 +7,7 @@ import sk4j.model.EProject
 class ProjectApp extends SkApp {
 
 	static main(args) {
+		println System.getProperty("user.dir")
 		EProject project = new EProject(file: new File("/home/jcruz/Programs/eclipse-mars/workspace/aelis2016"))
 		project.javaFiles.each { EJavaFile javaFile ->
 			if(javaFile.hasAnnotation('Entity')) {

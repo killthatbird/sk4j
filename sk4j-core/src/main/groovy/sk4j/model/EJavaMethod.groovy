@@ -19,9 +19,7 @@ class EJavaMethod extends EModel<JavaMethod>{
 	 * @return
 	 */
 	boolean hasAnnotation(String name) {
-		this.annotations.any { Annotation ann ->
-			ann.type.value.endsWith(name)
-		}
+		this.annotations.any { Annotation ann -> ann.type.value.endsWith(name) }
 	}
 	/**
 	 * 

@@ -4,6 +4,6 @@ import sk4j.SkContext
 
 class DaoApp extends SkContext {
 	static main(args) {
-		SkContext.task(DaoTask.class, [model:'jose'])
+		SkContext.task(DaoTask, [model:'jose'])
 	}
 }

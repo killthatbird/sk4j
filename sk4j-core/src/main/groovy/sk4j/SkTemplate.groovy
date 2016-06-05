@@ -1,7 +1,13 @@
 package sk4j
 
-class SkTemplate {
+abstract class SkTemplate {
 
-	def merge(){
-	}
+	def context = [:]
+
+	abstract void init()
+	/**
+	 * Retorna o template da aplicação.
+	 * @return String do Template ou File do Template.
+	 */
+	abstract def template()
 }

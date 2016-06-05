@@ -1,5 +1,7 @@
 package sk4j.model
 
+import groovy.transform.ToString
+
 import org.jboss.forge.roaster.model.source.JavaClassSource
 
 import com.thoughtworks.qdox.model.Annotation
@@ -12,16 +14,22 @@ import com.thoughtworks.qdox.model.JavaClass
  */
 class EJavaFile extends EModel<EJavaFile>   {
 
+	/**
+	 * 
+	 */
+	String path
+
+	/**
+	 * 
+	 */
+	String name
+
 	JavaClass javaClass
 
 	/**
 	 * 
 	 */
 	JavaClassSource javaClassSource
-	/**
-	 * 
-	 */
-	String path
 
 	/**
 	 * 
@@ -34,21 +42,26 @@ class EJavaFile extends EModel<EJavaFile>   {
 	List<EJavaMethod> javaMethods
 
 	/**
+	 * 
+	 * @return
+	 */
+	public String getName() {
+		javaClass.name
+	}
+	/**
 	 * Verifica se a classe possui a annotation especificada.
 	 * @param name
 	 * @return
 	 */
 	boolean hasAnnotation(String name) {
-		javaClass.annotations.any { Annotation ann ->
-			ann.type.value.endsWith(name)
-		}
+		javaClass.annotations.any { Annotation ann -> ann.type.value.endsWith(name) }
 	}
 	@Override
 	public int compareTo(EJavaFile o) {
-		return this.javaClass.name.compareTo(o.javaClass.name)
+		this.javaClass.name.compareTo(o.javaClass.name)
 	}
 	@Override
 	public String getId() {
-		return this.javaClass.name
+		this.javaClass.name
 	}
 }

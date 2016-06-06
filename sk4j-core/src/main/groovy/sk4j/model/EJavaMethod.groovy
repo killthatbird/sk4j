@@ -1,5 +1,7 @@
 package sk4j.model
 
+import sk4j.input.Choosable
+
 import com.thoughtworks.qdox.model.Annotation
 import com.thoughtworks.qdox.model.JavaMethod
 
@@ -8,7 +10,7 @@ import com.thoughtworks.qdox.model.JavaMethod
  * @author jcruz
  *
  */
-class EJavaMethod extends EModel<JavaMethod>{
+class EJavaMethod extends EModel<EJavaMethod> implements Choosable<EJavaMethod>{
 	/**
 	 * 
 	 */
@@ -25,7 +27,7 @@ class EJavaMethod extends EModel<JavaMethod>{
 	 * 
 	 */
 	@Override
-	public int compareTo(JavaMethod o) {
+	public int compareTo(EJavaMethod o) {
 		return this.javaMethod.name.compareTo(o.javaMethod.name)
 	}
 
@@ -33,7 +35,7 @@ class EJavaMethod extends EModel<JavaMethod>{
 	 * 
 	 */
 	@Override
-	public String getId() {
+	public String getChoiseLabel() {
 		return javaMethod.name
 	}
 }

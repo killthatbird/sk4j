@@ -1,5 +1,7 @@
 package sk4j.model
 
+import sk4j.input.Choosable
+
 import com.thoughtworks.qdox.model.Annotation
 import com.thoughtworks.qdox.model.JavaField
 
@@ -8,7 +10,7 @@ import com.thoughtworks.qdox.model.JavaField
  * @author jcruz
  *
  */
-class EJavaAttribute extends EModel<EJavaAttribute>   {
+class EJavaAttribute extends EModel<EJavaAttribute> implements Choosable<EJavaAttribute>   {
 	/**
 	 * 
 	 */
@@ -21,6 +23,7 @@ class EJavaAttribute extends EModel<EJavaAttribute>   {
 	boolean hasAnnotation(String name) {
 		this.annotations.any { Annotation ann -> ann.type.value.endsWith(name) }
 	}
+	
 	/**
 	 * 
 	 */
@@ -28,11 +31,12 @@ class EJavaAttribute extends EModel<EJavaAttribute>   {
 	public int compareTo(EJavaAttribute o) {
 		return this.javaField.name.compareTo(o.javaField.name)
 	}
+	
 	/**
 	 * 
 	 */
 	@Override
-	public String getId() {
+	public String getChoiseLabel() {
 		return javaField.name
 	}
 }

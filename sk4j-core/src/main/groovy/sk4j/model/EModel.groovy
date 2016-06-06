@@ -4,7 +4,7 @@ import groovy.text.GStringTemplateEngine
 import groovy.text.Template
 import sk4j.SkTemplate
 
-abstract class EModel<T> implements Comparable<T> {
+abstract class EModel<T>  {
 
 	SkTemplate template
 
@@ -36,9 +36,4 @@ abstract class EModel<T> implements Comparable<T> {
 			mergedTemplate
 		}
 	}
-	/**
-	 * 
-	 * @return
-	 */
-	abstract String getId()
 }

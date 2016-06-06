@@ -1,8 +1,8 @@
 package sk4j.model
 
-import groovy.transform.ToString
-
 import org.jboss.forge.roaster.model.source.JavaClassSource
+
+import sk4j.input.Choosable
 
 import com.thoughtworks.qdox.model.Annotation
 import com.thoughtworks.qdox.model.JavaClass
@@ -12,7 +12,7 @@ import com.thoughtworks.qdox.model.JavaClass
  * @author jcruz
  *
  */
-class EJavaFile extends EModel<EJavaFile>   {
+class EJavaFile extends EModel<EJavaFile> implements Choosable<EJavaFile>  {
 
 	/**
 	 * 
@@ -56,12 +56,14 @@ class EJavaFile extends EModel<EJavaFile>   {
 	boolean hasAnnotation(String name) {
 		javaClass.annotations.any { Annotation ann -> ann.type.value.endsWith(name) }
 	}
+	
 	@Override
 	public int compareTo(EJavaFile o) {
 		this.javaClass.name.compareTo(o.javaClass.name)
 	}
+
 	@Override
-	public String getId() {
+	public String getChoiseLabel() {
 		this.javaClass.name
 	}
 }

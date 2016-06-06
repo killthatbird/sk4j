@@ -33,6 +33,11 @@ class EProject {
 	 */
 	List<EJavaFile> javaFiles
 
+	/**
+	 * 
+	 */
+	List<File> dirs
+
 	public EProject() {
 		super()
 	}
@@ -56,5 +61,18 @@ class EProject {
 			}
 		}
 		return this.javaFiles
+	}
+
+	/**
+	 * Itera por todos os diretórios do projeto.
+	 * 
+	 * @return
+	 */
+	public List<File> getDirs() {
+		if(this.dirs == null) {
+			this.dirs = []
+			file.eachFileRecurse(FileType.DIRECTORIES) { dirs << it }
+		}
+		return dirs
 	}
 }

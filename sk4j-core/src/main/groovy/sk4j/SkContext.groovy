@@ -12,7 +12,7 @@ class SkContext {
 	/**
 	 * 
 	 */
-	EProject project = System.getProperty("user.dir")
+	EProject project
 
 	/**
 	 * 

@@ -24,8 +24,8 @@ class SkContext {
 	 * @param taskParamMap
 	 * @return
 	 */
-	static def task(Class<? extends SkTask> taskClass) {
-		SkTask task = taskClass.newInstance()
+	static def task(Class<? extends Task> taskClass) {
+		Task task = taskClass.newInstance()
 		task.doTask()
 	}
 
@@ -35,8 +35,8 @@ class SkContext {
 	 * @param taskContext
 	 * @return
 	 */
-	static def task(Class<? extends SkTask> taskClass, taskContext) {
-		SkTask task = taskClass.newInstance()
+	static def task(Class<? extends Task> taskClass, taskContext) {
+		Task task = taskClass.newInstance()
 		task.context = taskContext
 		task.doTask()
 	}

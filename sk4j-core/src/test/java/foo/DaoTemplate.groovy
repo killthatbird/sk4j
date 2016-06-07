@@ -1,8 +1,8 @@
 package foo
 
-import sk4j.SkTemplate
+import sk4j.Template
 
-class DaoTemplate extends SkTemplate {
+class DaoTemplate extends Template {
 
 	@Override
 	void init() {

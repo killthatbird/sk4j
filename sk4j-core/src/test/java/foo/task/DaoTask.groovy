@@ -1,8 +1,8 @@
 package foo.task
 
-import sk4j.SkTask
+import sk4j.Task
 
-class DaoTask extends SkTask {
+class DaoTask extends Task {
 
 	@Override
 	public void doTask() {

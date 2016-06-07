@@ -1,6 +1,6 @@
 package sk4j
 
-abstract class SkTemplate {
+abstract class Template {
 
 	def context = [:]
 

@@ -6,7 +6,7 @@ package sk4j
  * @author jcruz
  *
  */
-abstract class SkTask extends SkContext {
+abstract class Task extends SkContext {
 	/**
 	 * 
 	 * @return

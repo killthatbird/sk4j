@@ -2,11 +2,11 @@ package sk4j.model
 
 import groovy.text.GStringTemplateEngine
 import groovy.text.Template
-import sk4j.SkTemplate
+import sk4j.Template
 
 abstract class EModel<T>  {
 
-	SkTemplate template
+	Template template
 
 	String mergedTemplate
 
@@ -15,7 +15,7 @@ abstract class EModel<T>  {
 	 * @param templateClass
 	 * @return
 	 */
-	def merge(Class<? extends SkTemplate> templateClass) {
+	def merge(Class<? extends Template> templateClass) {
 		this.template = templateClass.newInstance()
 		template.context['model'] = this
 		template.init()

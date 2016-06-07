@@ -5,7 +5,7 @@ package sk4j
  * @author jcruz
  *
  */
-abstract class SkGeneratorTask extends SkTask {
+abstract class GeneratorTask extends Task {
 
 	/**
 	 * 

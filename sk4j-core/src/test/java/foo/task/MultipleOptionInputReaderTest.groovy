@@ -12,8 +12,6 @@ class MultipleOptionInputReaderTest {
 		MultipleOptionInputReader optionInputReader = new MultipleOptionInputReader(options: optionList)
 		def options = optionInputReader.read()
 		
-		options.each {
-			println it
-		}
+		options.each { println it }
 	}
 }

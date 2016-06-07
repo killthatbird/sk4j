@@ -15,6 +15,6 @@ class OptionInputReader extends InputReader {
 	}
 
 	def printOptions() {
-		def sortedOptions = options.sort().eachWithIndex { item , i -> println "[${i+1}] ${options[i]} " }
+		def sortedOptions = options.sort().eachWithIndex { item , i -> println "[${i+1}] ${item} " }
 	}
 }

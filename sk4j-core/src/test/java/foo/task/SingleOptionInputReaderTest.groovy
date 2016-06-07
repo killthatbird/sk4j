@@ -2,7 +2,7 @@ package foo.task
 
 import sk4j.input.SingleOptionInputReader
 
-class OptionInputReaderTest {
+class SingleOptionInputReaderTest {
 	static main(args) {
 		def optionList = [
 			"Atividade",

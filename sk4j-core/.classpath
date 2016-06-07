@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="output" path="bin"/>
-	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="src/main/groovy"/>
+	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="src/main/resources"/>
 	<classpathentry kind="src" path="src/test/java"/>
 	<classpathentry kind="src" path="src/test/resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7/"/>
-	<classpathentry sourcepath="/home/jcruz/.sdkman/candidates/gradle/2.13/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2/73d0340eaecbb0ec9d3e0ace90547ef08cbfaf27/commons-collections-3.2-sources.jar" kind="lib" path="/home/jcruz/.sdkman/candidates/gradle/2.13/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2/f951934aa5ae5a88d7e6dfaa6d32307d834a88be/commons-collections-3.2.jar"/>
-	<classpathentry sourcepath="/home/jcruz/.sdkman/candidates/gradle/2.13/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-all/2.4.3/8722c4f1d3657f989d3d24e8373f8cbbb6f44d92/groovy-all-2.4.3-sources.jar" kind="lib" path="/home/jcruz/.sdkman/candidates/gradle/2.13/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-all/2.4.3/472f5124c90a551d7ac7ffa39a4a3ba36ac4586a/groovy-all-2.4.3.jar"/>
-	<classpathentry sourcepath="/home/jcruz/.sdkman/candidates/gradle/2.13/caches/modules-2/files-2.1/com.thoughtworks.qdox/qdox/1.12.1/a284148a118e10bb84598dfb83f19d1ff128afad/qdox-1.12.1-sources.jar" kind="lib" path="/home/jcruz/.sdkman/candidates/gradle/2.13/caches/modules-2/files-2.1/com.thoughtworks.qdox/qdox/1.12.1/f7122f6ab1f64bdf9f5970b0e89bfb355e036897/qdox-1.12.1.jar"/>
-	<classpathentry sourcepath="/home/jcruz/.sdkman/candidates/gradle/2.13/caches/modules-2/files-2.1/org.jboss.forge.roaster/roaster-jdt/2.18.7.Final/43fea36130f210275fdaeaf9d0fe4ac2391e69dd/roaster-jdt-2.18.7.Final-sources.jar" kind="lib" path="/home/jcruz/.sdkman/candidates/gradle/2.13/caches/modules-2/files-2.1/org.jboss.forge.roaster/roaster-jdt/2.18.7.Final/2232a25f1ce4c639511460e3e8b70d48e3d7bd3e/roaster-jdt-2.18.7.Final.jar"/>
-	<classpathentry sourcepath="/home/jcruz/.sdkman/candidates/gradle/2.13/caches/modules-2/files-2.1/commons-io/commons-io/2.5/caf033a4a7c37b4a8ff3ea084cba591539b0b69/commons-io-2.5-sources.jar" kind="lib" path="/home/jcruz/.sdkman/candidates/gradle/2.13/caches/modules-2/files-2.1/commons-io/commons-io/2.5/2852e6e05fbb95076fc091f6d1780f1f8fe35e0f/commons-io-2.5.jar"/>
-	<classpathentry sourcepath="/home/jcruz/.sdkman/candidates/gradle/2.13/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar" kind="lib" path="/home/jcruz/.sdkman/candidates/gradle/2.13/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar"/>
-	<classpathentry sourcepath="/home/jcruz/.sdkman/candidates/gradle/2.13/caches/modules-2/files-2.1/org.jboss.forge.roaster/roaster-api/2.18.7.Final/aa2b52969e04e228721ea583620c144ae7c47316/roaster-api-2.18.7.Final-sources.jar" kind="lib" path="/home/jcruz/.sdkman/candidates/gradle/2.13/caches/modules-2/files-2.1/org.jboss.forge.roaster/roaster-api/2.18.7.Final/54eee3b85a91d4414a4efb4fb7f54bb45f0ca40b/roaster-api-2.18.7.Final.jar"/>
-	<classpathentry sourcepath="/home/jcruz/.sdkman/candidates/gradle/2.13/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/1dc37250fbc78e23a65a67fbbaf71d2e9cbc3c0b/hamcrest-core-1.3-sources.jar" kind="lib" path="/home/jcruz/.sdkman/candidates/gradle/2.13/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar"/>
+	<classpathentry exported="true" kind="con" path="org.springsource.ide.eclipse.gradle.classpathcontainer"/>
+	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -10,6 +10,7 @@ class SingleOptionInputReaderTest {
 			"Solicitação"
 		]
 		SingleOptionInputReader optionInputReader = new SingleOptionInputReader(options: optionList)
-		optionInputReader.read()
+		def option =optionInputReader.read()
+		println option
 	}
 }

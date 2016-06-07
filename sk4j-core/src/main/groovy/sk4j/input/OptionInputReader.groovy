@@ -14,6 +14,11 @@ class OptionInputReader extends InputReader {
 		it ==~ /\s*\d\d*/ && (it as Integer) in(1..options.size)
 	}
 
+	/**
+	 * Exibe as opções no console.
+	 * 
+	 * @return
+	 */
 	def printOptions() {
 		def sortedOptions = options.sort().eachWithIndex { item , i -> println "[${i+1}] ${item} " }
 	}

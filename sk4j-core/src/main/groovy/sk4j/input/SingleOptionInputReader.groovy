@@ -2,6 +2,9 @@ package sk4j.input
 
 class SingleOptionInputReader extends OptionInputReader {
 
+	/**
+	 * Le a opção do console e retorna o choosable correspondente
+	 */
 	@Override
 	def read() {
 		inputLabel = "\nDigite o número da opção: "
@@ -11,5 +14,6 @@ class SingleOptionInputReader extends OptionInputReader {
 		if(!valid) {
 			exit()
 		}
+		options[(inputValue as Integer)-1]
 	}
 }

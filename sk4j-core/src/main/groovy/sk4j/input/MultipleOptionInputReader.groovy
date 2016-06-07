@@ -1,4 +1,4 @@
 package sk4j.input
 
-class MultipleOptionInputReader extends InputReader  {
+class MultipleOptionInputReader extends OptionInputReader  {
 }
